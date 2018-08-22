@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<base href="[[!++site_url]]" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[[*longtitle]]</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Oswald&amp;subset=cyrillic" rel="stylesheet">
+<script src="https://use.fontawesome.com/e4e4e3703d.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style>
+    body{
+        font-family: 'Open Sans', sans-serif;
+    }
+    #top_1600{
+        [[*decland_colorbg_top:notempty=`background-color: #[[*decland_colorbg_top]];`]]
+    }
+    #top_1600 #topimg{
+        max-width: 1600px;
+        height: 680px;
+        margin: 0 auto;
+        background-image: url('[[*decland_topimg]]');
+        background-size: 100%;
+    }
+    #top_1600 #link1{
+        background-color: #[[*decland_colorbg_button]];
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 10px;
+        position: relative;
+        top: 550px;
+        left: 930px;
+        font-size: 27px;
+    }
+    #form{
+        background-color: #[[*decland_colorbg_form]];
+        color: #fff;
+        padding-bottom: 40px;
+    }
+    #form .text{
+        font-family: 'Oswald', sans-serif;
+        text-align: center;
+        font-size: 36px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    #form #btn_sub{
+        font-family: 'Oswald', sans-serif;
+        font-size: 24px;
+        background-color: #[[*decland_colorbg_form_btn]];
+        padding: 5px 50px 10px 50px;
+        color: #000;
+        text-transform: lowercase;
+        border-radius: 10px;
+        border: 0px;
+        position: relative;
+        float: left;
+        margin: 15px 0px 10px 30px;
+    }
+    #form .input{
+        background: transparent;
+        padding: 7px;
+        border: 1px solid;
+    }
+    #form .error{
+        color: #fff;
+        font-size: 12px;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-family: 'Oswald', sans-serif;
+    }
+    #content img{
+        padding-right: 20px;
+    }
+    content{
+        font-size: 18px;
+    }
+    
+    #mapblock{
+        position: relative;
+    }
+    #mapblock #maptext{
+        position: absolute;
+        z-index: 999;
+        width: 270px;
+        padding: 20px;
+        margin-top: 100px;
+        left: 27%;
+        border-radius: 10px;
+        border: 3px solid #[[*decland_border_map]];
+        background-color: #[[*decland_colorbg_map]];
+    }
+    #mapblock #maptext p{
+        font-size: 14px;
+        padding-left: 25px;
+    }
+    #mapblock #maptext p a{
+        color: #000;
+    }
+    #mapblock #maptext p.phone{
+        font-size: 22px;
+    }
+    #mapblock #maptext p i{
+        font-size: 19px;
+        position: absolute;
+        margin-left: -25px;
+    }
+    #mapblock #maptext p.phone i{
+        margin-top: 5px;
+    }
+    #footerlink{
+        background-color: #[[*decland_colorbg_footernav]];
+    }
+    #footerlink ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+    #footerlink ul li{
+        padding: 10px;
+        display: inline-block;
+    }
+    #footerlink ul li a{
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 17px;
+    }
+    footer{
+        text-align: center;
+    }
+    footer #logo_footer{
+        margin: 10px 0;
+    }
+    
+    footer p i {
+        font-size: 19px;
+        position: absolute;
+        margin-left: -25px;
+    }
+    footer p{
+        font-size: 16px;
+        padding-left: 25px;
+        text-align: left;
+        margin-top: 15px;
+    }
+    
+    footer .maps_f{
+        
+    }
+    
+    #top_mob{
+        display: none;
+    }
+    
+    #top_mob img{
+       width: 100%;
+    }
+    #top_mob > div{
+        text-align: center;
+    }
+    #top_mob #link1{
+        background-color: #[[*decland_colorbg_button]];
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 10px;
+        font-size: 27px;
+        display: inline-block;
+        margin: 10px 0;
+    }
+        
+    @media (max-width: 1600px){
+        #top_1600{
+            display: none;
+        }
+        #top_mob{
+            display: block;
+        }
+    }
+    
+    @media (max-width: 1200px){
+        #form #btn_sub{
+            float: none;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+    
+    @media (max-width: 720px){
+        #form .form-group{
+            text-align: center;
+        }
+        
+        #form .input{
+            width: 90%;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+    
+    
+    @media (max-width: 600px){
+        #mapblock #maptext{
+            position: relative;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 15px;
+            margin-top: 10px;
+            left: auto;
+        }
+        footer p{
+            text-align: center;
+        }
+    }
+
+</style>
+</head>
+<body>
+    <div id="top_1600">
+        <div id="topimg">
+            <a href="" id="link1">Перейти в магазин</a>
+        </div>
+    </div>
+    <div id="top_mob">
+        <img src="[[*decland_topimg]]" alt="">
+        <div>
+            <a href="" id="link1">Перейти в магазин</a>
+        </div>
+    </div>
+    <div id="form">
+        <div class="container">
+             <div class="row">
+                 <div class="col-xs-12">
+                    <p class="text">
+                        Остались вопросы? Оставьте ваши контакты и мы вам перезвоним
+                    </p>
+                 </div>
+                  [[!AjaxForm?
+                        &snippet=`FormIt`
+                        &form=`tpl.decland.form`
+                        &hooks=`recaptchav2,email`
+                        &emailFrom=`no-reply@[[!nohttp? &input=`[[++site_url]]`]]`
+                        &emailFromName=`Сайт [[++site_url:replace=`http://== `:replace=`/== `]]`
+                        &emailSubject=`Запрос прайса с сайта [[++site_url:replace=`http://== `:replace=`/== `]]`
+                        &emailTo=`[[*decland_email_to]]`
+                        &emailTpl=`declandmailtpl`
+                        &validate=`name:required,phone:required,g-recaptcha-response:required`
+                        &validationErrorMessage=`В форме содержатся ошибки!`
+                        &successMessage=`Заявка успешно отправлена`
+                        &name.vTextRequired=`Пожалуйста, укажите, как к вам обращаться`
+                        &phone.vTextRequired=`Пожалуйста, укажите свой телефон`
+                    ]]
+             </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    [[*content]]
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mapblock">
+            <div id="maptext">
+                <div>
+                    <div>
+                        <p>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> [[*decland_addres]]
+                        </p>
+                        <p class="phone">
+                            <i class="fa fa-phone" aria-hidden="true"></i> [[*decland_phone1]] <br>
+                            <i class="fa fa-phone" aria-hidden="true"></i> [[*decland_phone2]]
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:[[*decland_email]]">[[*decland_email]]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="map" style="width: 100%; height: 400px"></div>
+    </div>
+    <div id="footerlink">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <nav>
+                        <ul>
+                            [[!getImageList?
+                                &tvname=`decland_navlink`
+                                &tpl=`@CODE:
+                                <li>
+                                    <a href="[[+link]]">[[+title]]</a>
+                                </li>`
+                            ]]
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="logo_footer">
+                        <img src="[[*decland_logo]]" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <p class="maps_f">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i> [[*decland_addres]]
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <p class="phone_f">
+                        <i class="fa fa-phone" aria-hidden="true"></i> [[*decland_phone1]] <br>
+                        <i class="fa fa-phone" aria-hidden="true"></i> [[*decland_phone2]]
+                    </p>
+                    <p class="addr_f">
+                        <i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:[[*decland_email]]">[[*decland_email]]</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=MyCallBack&render=explicit" async defer></script>
+<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script>
+  var recaptcha1;
+  var MyCallBack = function() {
+    //Render the recaptcha1 on the element with ID "recaptcha1"
+    recaptcha1 = grecaptcha.render('recaptcha1', {
+      'sitekey' : '[[++recaptchav2.site_key]]', //Replace this with your Site key
+      'theme' : 'light',
+      //'size' : 'compact',
+    });
+    
+  };
+
+ymaps.ready(init);
+ 
+function init () {
+    var myMap = new ymaps.Map("map", {
+        // Центр карты, указываем коордианты
+        center:[ [[*decland_coords]] ],
+        // Масштаб, тут все просто
+        zoom: [[*decland_coords_zoom]],
+    }); 
+             
+    var myGeoObjects = [];
+     
+    // Наша метка, указываем коордианты
+    myGeoObjects = new ymaps.Placemark([ [[*decland_coords]] ],{
+                    balloonContentBody: 'Текст в балуне',
+                    },{
+                    iconLayout: 'default#image',
+                    // Путь до нашей картинки
+                    iconImageHref: '[[++site_url]][[*decland_coords_img]]', 
+                    // Размер по ширине и высоте
+                    iconImageSize: [66, 82],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её «ножки» (точки привязки).
+                    iconImageOffset: [-33, -41]
+    });
+                 
+    var clusterer = new ymaps.Clusterer({
+        clusterDisableClickZoom: false,
+        clusterOpenBalloonOnClick: false,
+    });
+     
+    clusterer.add(myGeoObjects);
+    myMap.geoObjects.add(clusterer);
+    // Отлючаем возможность изменения масштаба
+    myMap.behaviors.disable('scrollZoom');
+ 
+}
+</script>    
+</body>
+</html>

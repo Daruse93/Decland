@@ -1,0 +1,44 @@
+<form action="" method="post" class="ajax_form af_example">
+    <div class="row">
+        <div class="col-12 col-lg-3">
+            <div class="form-group">
+                <label class="control-label" for="af_name">Ваше имя:</label>
+                <div class="controls">
+                    <input type="text" id="af_name" name="name" value="[[+fi.name]]" placeholder="" class="input"/>
+                    <span class="error_name">[[+fi.error.name]]</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3">
+            <div class="form-group">
+                <label class="control-label" for="af_phone">Ваш телефон:</label>
+                <div class="controls">
+                    <input type="text" id="af_phone" name="phone" value="[[+fi.phone]]" placeholder="" class="input"/>
+                    <span class="error_phone">[[+fi.error.phone]]</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3">
+            <div class="form-item">
+                <div id="recaptcha1"></div>
+                <span class="error_g-recaptcha-response error"></span>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3">
+
+            <div class="form-group">
+                <div class="controls">
+                    <button id="btn_sub" type="submit">[[%af_submit]]</button>
+                </div>
+            </div>
+
+            [[+fi.success:is=`1`:then=`
+            <div class="alert alert-success">[[+fi.successMessage]]</div>
+            `]]
+            [[+fi.validation_error:is=`1`:then=`
+            <div class="alert alert-danger">[[+fi.validation_error_message]]</div>
+            `]]
+
+        </div>
+    </div>
+</form>
